@@ -1,19 +1,35 @@
+
+
 window.onload = function() {
 
-  var messagesEl = document.querySelector('.messages');
-  var typingSpeed = 40;
-  var loadingText = '<b>•</b><b>•</b><b>•</b>';
-  var messageIndex = 0;
+  const messagesEl = document.querySelector('.messages');
+  const typingSpeed = 40;
+  const loadingText = '<b>•</b><b>•</b><b>•</b>';
+  let messageIndex = 0;
 
-  var messages = [
+  createMessageElements()
+  createMessageBubbles()
+  sendMessages()
+
+}
+
+function sendMessages() {
+  const message = rightMessages[messageIndex];
+  if (!message) return;
+  sendMessage(message);
+  messageIndex++;
+ 
+}
+
+
+  const rightMessages = [
     'I had a dream about you last night',
     'we were driving somewhere',
     'I think your hand was on my thigh',
     'or maybe mine was on yours..',
-    'mebbe',
     'do you ever think about me?',
-    'I think about you occasionally tooo',
-    'like, sort of frequently really you see',
+    'I think about you occasionally too',
+    'like, sort of frequently',
     'i know you\'re not really, the same as what i imagine tho',
     'because how could you be',
     'people change right',
@@ -21,8 +37,8 @@ window.onload = function() {
     'sooo.. the person i imagine isn\'t going to be how you are now',
     'are you listening at all',
     'how you always were',
-    'and I have made up conversations with you',
-    'like something will happen and then we will talk about it',
+    'and I have imaginary conversations with you',
+    'like something will happen, and then we will talk about it in my head',
     'or I will replay a memory but you\'ll be injected in it',
     'a little bit',
     'yeah',
@@ -32,4 +48,29 @@ window.onload = function() {
     'what do you mean?',
   ]
 
-}
+  leftMessages = [
+    'oh?',
+    'or maybe my thighs were your thighs? Muay Thai\'s',
+    'yer..',
+    'occasionally',
+    'oh i see',
+    'I\'m not?',
+    'why\'s that',
+    'they evolve like pokemon you see',
+    'hmm.. is that what you think i\'d respond with?',
+    'yer I see',
+    'I see the sea',
+    'and then we went to the beach',
+    'wood food',
+    'yer',
+    'how do you imagine me',
+    'haha like what',
+    'I\'ve invaded ya brain you see',
+    'but a little can be a lot',
+    'get ready for a sucker',
+    'I\'m not real',
+    'ah.. bisto! Did I just break your engrossedness?',
+    'I\'m just a set of memories and you\'re pulling the strings',
+    'pulling ya own strings, ya heartstrings',
+    'Steve?',
+  ]
